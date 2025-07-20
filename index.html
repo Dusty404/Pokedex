@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PokeDex</title>
+    <link rel="icon" type="image/x-icon" href="./img/pokeball.png" />
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="fonts.css" />
+    <script src="script.js"></script>
+    <script src="renderChart.js"></script>
+    <script src="pokemonTypColor.js"></script>
+    <script src="templates.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.2.0/chartjs-plugin-datalabels.min.js"
+      integrity="sha512-JPcRR8yFa8mmCsfrw4TNte1ZvF1e3+1SdGMslZvmrzDYxS69J7J49vkFL8u6u8PlPJK+H3voElBtUCzaXj+6ig=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+
+  <body onload="loadPokedex()" id="body">
+    <div class="content">
+      <div id="header" class="header">
+        <img class="pokeball rotate" src="./img/pokeball.png" />
+        <div class="h1">
+          <h1 class="red">P</h1>
+          <h1 class="white">oke</h1>
+          <h1 class="red">D</h1>
+          <h1 class="white">ex</h1>
+        </div>
+        <div class="searchbar">
+          <form
+            class="form"
+            onsubmit="return false"
+            onkeyup="return false, filterPokemon()"
+          >
+            <img src="./img/pokePin.png" />
+            <input
+              type="text"
+              minlength="3"
+              required
+              id="searchBar"
+              class="input"
+              placeholder="Search Pokemon"
+            />
+          </form>
+        </div>
+      </div>
+      <div id="pokeDex" class="pokedex"></div>
+      <div id="pokemonBigPicture" class="d-none pokemonBigPicture">
+        <div id="bigPictureBackground" class="bigPictureBackground">
+          <div
+            id="bigPictureBackgroundCardContainer"
+            class="bigPictureBackgroundCardContainer"
+          >
+            <div
+              id="pokemonBigPictureTopCard"
+              class="pokemonBigPictureTopCard"
+            ></div>
+            <div
+              id="pokemonBigPictureBottomCard"
+              class="pokemonDetailInfo"
+            ></div>
+          </div>
+        </div>
+      </div>
+      <div id="loadMoreDiv" class="loadMore">
+        <a href="#header"
+          ><img
+            id="pokeballMore"
+            class="pokeballMore rotate"
+            src="./img/pokeball.png"
+        /></a>
+        <button id="loadMoreButton" onclick="renderMore()" class="renderMore">
+          Mehr Pokemon anzeigen
+        </button>
+        <a href="#header"
+          ><img
+            id="pokeballMore2"
+            class="pokeballMore rotate"
+            src="./img/pokeball.png"
+        /></a>
+      </div>
+    </div>
+  </body>
+</html>
